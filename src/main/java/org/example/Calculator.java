@@ -15,7 +15,11 @@ public class Calculator {
             return a * b;
         } else if (op == Operator.DIVIDE) {
             // throw an ArithmeticException when b == 0
-            return a / b;
+            if (b==0) {
+                throw new ArithmeticException("Divide by zero");
+            }else{
+                return a / b;
+            }
         } else {
             throw new IllegalArgumentException("Unknown operator");
         }
